@@ -11,3 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
         examList.appendChild(li);
     });
 });
+
+document.getElementById("search").addEventListener("input", function() {
+    const keyword = this.value.toLowerCase();
+    document.querySelectorAll("#exam-list li").forEach(li => {
+        li.style.display = li.textContent.toLowerCase().includes(keyword) ? "" : "none";
+    });
+});
